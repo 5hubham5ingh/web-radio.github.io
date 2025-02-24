@@ -1,37 +1,31 @@
 import { createRouter, createWebHistory } from "vue-router";
-import ExploreView from "@/views/explore-view.vue";
-import SearchView from "@/views/search-view.vue";
-import SettingsView from "@/views/settings-view.vue";
-import HistoryView from "@/views/history-view.vue";
-import VotedView from "@/views/voted-view.vue";
-import StationInfoView from "@/views/station-info-view.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      component: ExploreView,
+      component: () => import("@/views/explore-view.vue"),
     },
     {
       path: "/search",
-      component: SearchView,
+      component: () => import("@/views/search-view.vue"),
     },
     {
       path: "/settings",
-      component: SettingsView,
+      component: () => import("@/views/settings-view.vue"),
     },
     {
       path: "/history",
-      component: HistoryView,
+      component: () => import("@/views/history-view.vue"),
     },
     {
       path: "/voted",
-      component: VotedView,
+      component: () => import("@/views/voted-view.vue"),
     },
     {
       path: "/s/:id",
-      component: StationInfoView,
+      component: () => import("@/views/station-info-view.vue"),
     },
     {
       path: "/:pathMatch(.*)*",
@@ -41,4 +35,3 @@ const router = createRouter({
 });
 
 export default router;
-
