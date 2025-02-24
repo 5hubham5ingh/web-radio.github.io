@@ -97,7 +97,7 @@ onBeforeMount(async () => {
 }
 
 #app {
-  background-color: #050509;
+  background-color: #05050969;
   min-height: 100vh;
   color: #fff;
   font-family: 'Poppins', sans-serif !important;
