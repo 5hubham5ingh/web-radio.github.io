@@ -1,37 +1,44 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory } from "vue-router";
+import ExploreView from "@/views/explore-view.vue";
+import SearchView from "@/views/search-view.vue";
+import SettingsView from "@/views/settings-view.vue";
+import HistoryView from "@/views/history-view.vue";
+import VotedView from "@/views/voted-view.vue";
+import StationInfoView from "@/views/station-info-view.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      component: () => import('@/views/explore-view.vue'),
+      path: "/",
+      component: ExploreView,
     },
     {
-      path: '/search',
-      component: () => import('@/views/search-view.vue'),
+      path: "/search",
+      component: SearchView,
     },
     {
-      path: '/settings',
-      component: () => import('@/views/settings-view.vue'),
+      path: "/settings",
+      component: SettingsView,
     },
     {
-      path: '/history',
-      component: () => import('@/views/history-view.vue'),
+      path: "/history",
+      component: HistoryView,
     },
     {
-      path: '/voted',
-      component: () => import('@/views/voted-view.vue'),
+      path: "/voted",
+      component: VotedView,
     },
     {
-      path: '/s/:id',
-      component: () => import('@/views/station-info-view.vue'),
+      path: "/s/:id",
+      component: StationInfoView,
     },
     {
-      path: '/:pathMatch(.*)*',
-      redirect: '/',
+      path: "/:pathMatch(.*)*",
+      redirect: "/",
     },
   ],
 });
 
 export default router;
+
